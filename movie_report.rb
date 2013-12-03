@@ -3,6 +3,9 @@
 require 'filesize'
 
 movies_path = ARGV.shift
+
+abort "Please pass me a path to the movies directory." unless File.directory?(movies_path)
+
 movies_path = File.join(movies_path, '*')
 
 movie_extensions = %w( mkv avi mpg wmv )
